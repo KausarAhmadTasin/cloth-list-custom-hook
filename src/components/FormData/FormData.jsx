@@ -1,3 +1,4 @@
+/* eslint-disable no-irregular-whitespace */
 import { useState } from "react";
 
 const Form = ({ products, setProducts }) => {
@@ -34,7 +35,7 @@ const Form = ({ products, setProducts }) => {
   return (
     <div className="form-container">
       <form className="flex-column" action="submit" onSubmit={formSubmit}>
-        <label htmlFor="pr-id">Product Id</label>
+        <label htmlFor="pr-id">Cloth Id</label>
         <input
           id="pr-id"
           type="number"
@@ -45,7 +46,7 @@ const Form = ({ products, setProducts }) => {
           onChange={(e) => setId(e.target.value)}
         />
         {/* {console.log(id)} */}
-        <label htmlFor="pr-name">Product Name</label>
+        <label htmlFor="pr-name">Cloth Name</label>
         <input
           id="pr-name"
           placeholder="Product Name"
@@ -54,7 +55,7 @@ const Form = ({ products, setProducts }) => {
           onChange={(e) => setPrName(e.target.value)}
         />
         {/* {console.log(prName)} */}
-        <label htmlFor="pr-name">Product Price</label>
+        <label htmlFor="pr-name">Price</label>
         <input
           id="pr-price"
           type="number"
@@ -95,10 +96,28 @@ const Form = ({ products, setProducts }) => {
           onChange={(e) => setColor(e.target.value)}
         >
           {/* {console.log(color)} */}
-          <option value="Black">Black</option>
-          <option value="White">White</option>
+          <option value="Red">Red</option>
           <option value="Blue">Blue</option>
+          <option value="Green">Green</option>
         </select>
+
+        <br />        
+        <input type="radio" id="M" name="size" value="M" />
+        <label htmlFor="M">M</label><br />
+
+        <input type="radio" id="L" name="size" value="L"/>
+        <label htmlFor="L">L</label><br/>
+
+        <input type="radio" id="XL" name="size" value="XL"/>
+        <label htmlFor="XL">XL</label> 
+        <br />
+
+        <label htmlFor="Manufacture">Manufacturing Date</label>
+        <input type="date" id="Manufacture" name="Manufacture" />
+
+        <input type="checkbox" id="terms-agree" name="terms-agree" value="agree" />
+        <label htmlFor="terms-agree">I agree with the terms and conditions.</label><br />
+
         <input className="add-btn" type="submit" value="Add Product" />
         {/* {console.log(products)} */}
       </form>

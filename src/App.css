@@ -51,21 +51,21 @@
 
 /* ---------------------------form--------------------------------- */
 .form-container {
-  /* display: flex; */
   width: 85vw;
-
-  /* margin-top: 20px; */
   padding: 18px 64px;
+  display: flex;  /* display: flex; */
+  /* margin-top: 20px; */
   /* align-items: center; */
 }
 
 
 .form-container form {
+
   /* width: 500px;
   /* background-color: #f8f1e7; */
-  margin: auto;
-  padding: 20px;
-  border-radius: 7.5px; */
+  /* margin: auto; */
+  /* padding: 20px; */
+  /* border-radius: 7.5px; */ */
 }
 
 
@@ -129,7 +129,7 @@
 }
 
 .delete-circle {
-  color: red
+  color: red;
 }
 
 .delete-circle:hover {
