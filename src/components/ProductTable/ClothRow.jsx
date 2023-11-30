@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { TiDelete } from "react-icons/ti";
 
 const Table = ({ singleProduct, products, setProducts }) => {
@@ -15,6 +16,9 @@ const Table = ({ singleProduct, products, setProducts }) => {
       <td>{singleProduct.prQuantity}</td>
       <td>{singleProduct.prDescription}</td>
       <td>{singleProduct.color}</td>
+      <td>{singleProduct.size}</td>
+      <td>{singleProduct.date}</td>
+      <td>{"Yes"}</td>
       <td onClick={() => deleteProduct(singleProduct.id)}>
         <div className="delete-circle">
           <TiDelete />

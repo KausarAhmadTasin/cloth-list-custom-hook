@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Form from "./components/FormData/FormData";
-import ProductTable from "./components/ProductTable/ProductTable";
+import ProductTable from "./components/ProductTable/ClothTable";
 
 function App() {
   const [products, setProducts] = useState(JSON.parse(localStorage.getItem("products")) || []);

@@ -1,4 +1,4 @@
-import ProductRow from "../ProductTable/ProductRow";
+import ProductRow from "./ClothRow";
 
 const ProductTable = ({ products, setProducts }) => {
   return (
@@ -12,6 +12,9 @@ const ProductTable = ({ products, setProducts }) => {
             <th>Quantity</th>
             <th>Description</th>
             <th>Color</th>
+            <th>Size</th>
+            <th>M. Date</th>
+            <th>Agree</th>
             <th>remove</th>
           </tr>
         </thead>
