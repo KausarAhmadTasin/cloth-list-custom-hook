@@ -139,6 +139,9 @@ textarea {
   margin-right: .3rem;
 }
 
-.date-select {
-  
+.item-center {
+  text-align: center;
+  margin-top: 3rem;
+  background-color: #ece5e5;
+  margin: 0 4vw;
 }

@@ -1,8 +1,7 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-irregular-whitespace */
 import { useState } from "react";
 import InputField from "./InputField";
 import "./FormData.css"
+// import useForm from "../UseForm/useForm";
 
 const Form = ({ products, setProducts }) => {
   const [id, setId] = useState("");
@@ -15,10 +14,12 @@ const Form = ({ products, setProducts }) => {
   const [date, setDate] = useState();
   const [agree, setAgree] = useState(false);
 
+  // const [state, handleSubmit] = useForm()
+
   
  
 
-  const formSubmit = (e) => {
+  const formSubmit = () => {
     !id.trim() || id === products.id ? alert("Entering Cloth id is mandatory") : setId("");
       
     !prName.trim() ? alert("Entering Cloth Name is mandatory") : setPrName("");

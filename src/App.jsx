@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Form from "./components/FormData/FormData";
 import ClothTable from "./components/ProductTable/ClothTable";
-
 function App() {
-  const [products, setProducts] = useState(JSON.parse(localStorage.getItem("products")) || []);
-// console.log(products)
+  const [products, setProducts] = useState(
+    JSON.parse(localStorage.getItem("products")) || []
+  );
+  // console.log(products)
 
   useEffect(() => {
     localStorage.setItem("products", JSON.stringify(products));
@@ -15,21 +16,22 @@ function App() {
   return (
     <>
       <div className="head-container">
-        {/* <div className="text-center">
-          <h1 className="app-title">Add New Product</h1>
-          <p>Add and view your products using local storage</p>
-        </div> */}
+        
         <div className="main-container">
-
           <div className="functional-container">
-            <Form products={products} setProducts={setProducts} />
             
-            <div className="product-table">
-              <ClothTable products={products} setProducts={setProducts} />
-            </div>
-
-          </div>
+            <Form products={products} setProducts={setProducts} />
           
+            {products.length <= 0 ? (
+              <h2 className="item-center">No cloth added yet!...</h2>
+            ) 
+            : 
+            (
+              <div className="product-table">
+                <ClothTable products={products} setProducts={setProducts} />
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </>
