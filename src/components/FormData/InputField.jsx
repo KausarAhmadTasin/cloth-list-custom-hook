@@ -10,7 +10,7 @@ const InputField = ({type = "Text", placeholder, value, setValue,  labelTitle}) 
             type={type}
             placeholder={placeholder}
             value={value}
-            required
+            
             onChange={(e) => setValue(e.target.value)}
             />
             </label>

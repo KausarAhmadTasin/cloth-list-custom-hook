@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Form from "./components/FormData/FormData";
-import ProductTable from "./components/ProductTable/ClothTable";
+import ClothTable from "./components/ProductTable/ClothTable";
 
 function App() {
   const [products, setProducts] = useState(JSON.parse(localStorage.getItem("products")) || []);
@@ -25,7 +25,7 @@ function App() {
             <Form products={products} setProducts={setProducts} />
             
             <div className="product-table">
-              <ProductTable products={products} setProducts={setProducts} />
+              <ClothTable products={products} setProducts={setProducts} />
             </div>
 
           </div>

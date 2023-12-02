@@ -6,8 +6,8 @@ const ProductTable = ({ products, setProducts }) => {
       <table className="view-table">
         <thead>
           <tr>
-            <th>Product Id</th>
-            <th>Product Name</th>
+            <th>Cloth Id</th>
+            <th>Cloth Name</th>
             <th>Price</th>
             <th>Quantity</th>
             <th>Description</th>

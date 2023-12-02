@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-irregular-whitespace */
 import { useState } from "react";
 import InputField from "./InputField";
@@ -13,32 +14,46 @@ const Form = ({ products, setProducts }) => {
   const [size, setSize] = useState();
   const [date, setDate] = useState();
   const [agree, setAgree] = useState(false);
+
+  
  
-  const clearInputs = () => {
-    setId("");
-    setPrName("");
-    setPrPrice("");
-    setPrQuantity("");
-    setPrDescription("");
+
+  const formSubmit = (e) => {
+    !id.trim() || id === products.id ? alert("Entering Cloth id is mandatory") : setId("");
+      
+    !prName.trim() ? alert("Entering Cloth Name is mandatory") : setPrName("");
+     
+    prQuantity < 1 || prQuantity > 5 ? alert("Quantity cannot be negative or more than 5") : setPrQuantity("");
+    
+    !prQuantity.trim() ? alert("Entering Quantity is mandatory.") : setPrPrice("");
+   
+    !prPrice.trim() ? alert("Entering Cloth id is mandatory") : setPrQuantity("");
+     
+    !prDescription.trim() ? alert("Entering Description id is mandatory") : setPrDescription("");
+
     setColor("Black");
     setDate();
     setAgree(false);
-  };
 
-  const formSubmit = (e) => {
-    e.preventDefault();
-    const product = {
-      id,
-      prName,
-      prPrice,
-      prQuantity,
-      prDescription,
-      color,
-      size,
-      date
-    };
-    setProducts([...products, product]);
-    clearInputs();
+    const idTaken = (newId) => {
+      return products.find((product) => product.id === newId);
+    }
+  
+    if(idTaken(id)) {
+      alert(`${id} is taken as Id. Choose another Id.`);
+    }else{
+      const product = {
+        id,
+        prName,
+        prPrice,
+        prQuantity,
+        prDescription,
+        color,
+        size,
+        date
+      };
+      setProducts([...products, product]);
+    }
   };
 
   const agreeHandle = (e)=> {
@@ -52,7 +67,7 @@ const Form = ({ products, setProducts }) => {
     
         <div className="divider">
         <div className="left-column">
-            <InputField className="mock-class" min={0} labelTitle={"Cloth Id "} type={"number"} placeholder={"Cloth Id"} value={id} setValue= {setId}/>
+            <InputField className="mock-class" id="id" min={0} labelTitle={"Cloth Id "} type={"number"} placeholder={"Cloth Id"} value={id} setValue= {setId}/>
             <InputField   labelTitle={"Cloth Name "} placeholder={"Cloth Name"} value={prName} setValue= {setPrName}/> 
             <label style={{display: "flex", flexDirection: "column"}}>
               Description: 
@@ -62,7 +77,7 @@ const Form = ({ products, setProducts }) => {
 
           <div className="right-column">
             <InputField  labelTitle={"Price "}  min={0} type={"number"} placeholder={"Cloth Price"} value={prPrice} setValue= {setPrPrice}/>
-            <InputField  labelTitle={"Quantity "}  min={0} max= {5} type={"number"} placeholder={"Quantity"} value={prQuantity} setValue= {setPrQuantity}/>
+            <InputField  labelTitle={"Quantity "}  min={0} max= {5} type={"number"} placeholder={"Order limit is 5"} value={prQuantity} setValue= {setPrQuantity}/>
             
             {/* Color selection dropdown */}
             <label htmlFor="select-color">Choose a color </label>
